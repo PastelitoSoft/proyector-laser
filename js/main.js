@@ -19,10 +19,16 @@ function seleccionarLetraAleatoria() {
         boton.classList.add('disabled');
 
         iniciarParpadeo();
+    } else {
+        letras.src = `./res/img/fin.png`;
+        boton.addEventListener('click', () => {
+            if (!boton.classList.contains('disabled')) {
+                location.reload();
+            }
+        });
     }
 }
 
-//https://github.com/PastelitoSoft/proyector-laser.git
 
 function iniciarParpadeo() {
     // Añadir la clase de animación
@@ -37,12 +43,12 @@ function iniciarParpadeo() {
 
         // Simular habilitar el botón nuevamente
         boton.classList.remove('disabled');
-    }, 2000);
+    }, 1500);
 }
 
 // Evento cuando el DOM se carga completamente
 document.addEventListener('DOMContentLoaded', () => {
-    seleccionarLetraAleatoria(); // Selecciona una letra al cargar la página
+    letras.src = `./res/img/inicio.png`;
 });
 
 // Evento al hacer clic en el botón
