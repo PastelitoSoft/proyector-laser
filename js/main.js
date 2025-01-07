@@ -15,12 +15,11 @@ function seleccionarLetraAleatoria() {
         const letraSeleccionada = abecedario.splice(indiceAleatorio, 1)[0];
         letras.src = `./res/img/letras/${letraSeleccionada}.png`;
 
-        // Simular deshabilitar el botón
         boton.classList.add('disabled');
 
         iniciarParpadeo();
     } else {
-        letras.src = `./res/img/fin.png`;
+        letras.src = `./res/img/fin2.png`;
         boton.addEventListener('click', () => {
             if (!boton.classList.contains('disabled')) {
                 location.reload();
@@ -43,12 +42,12 @@ function iniciarParpadeo() {
 
         // Simular habilitar el botón nuevamente
         boton.classList.remove('disabled');
-    }, 1500);
+    }, 2000);
 }
 
 // Evento cuando el DOM se carga completamente
 document.addEventListener('DOMContentLoaded', () => {
-    letras.src = `./res/img/inicio.png`;
+    letras.src = `./res/img/inicio2.png`;
 });
 
 // Evento al hacer clic en el botón
